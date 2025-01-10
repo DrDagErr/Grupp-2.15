@@ -18,4 +18,8 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Math Class");
     }
+    public void LoadArtClass()
+    {
+        SceneManager.LoadScene("Art Class"); 
+    }
 }
