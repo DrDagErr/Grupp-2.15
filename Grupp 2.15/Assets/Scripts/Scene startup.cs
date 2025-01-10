@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Scene01Events : MonoBehaviour
+public class SceneStartup : MonoBehaviour
 {
-    public GameObject fadeScreenIn;
-    public GameObject charVelma;
+    public GameObject character;
     public GameObject textBox;
+
+    [SerializeField] float waitSeconds;
 
     void Start()
     {
@@ -15,15 +16,15 @@ public class Scene01Events : MonoBehaviour
 
     IEnumerator EventStarter()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(waitSeconds);
         //fadeScreenIn.SetActive(false);
-        charVelma.SetActive(true);
+        character.SetActive(true);
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(waitSeconds);
         // this is where our text function will go in future tutorial
         textBox.SetActive(true);
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(waitSeconds);
        
     }
 }
