@@ -22,4 +22,8 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Art Class"); 
     }
+    public void LoadPEClass()
+    {
+        SceneManager.LoadScene("PE Class");
+    }
 }
