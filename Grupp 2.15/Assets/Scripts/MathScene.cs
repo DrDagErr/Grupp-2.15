@@ -16,7 +16,7 @@ public class Scene01Events : MonoBehaviour
     IEnumerator EventStarter()
     {
         yield return new WaitForSeconds(2);
-        fadeScreenIn.SetActive(false);
+        //fadeScreenIn.SetActive(false);
         charVelma.SetActive(true);
 
         yield return new WaitForSeconds(2);
