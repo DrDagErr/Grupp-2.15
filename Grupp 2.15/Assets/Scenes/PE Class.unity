@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 2008952855}
   - component: {fileID: 2008952854}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Fade In
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
