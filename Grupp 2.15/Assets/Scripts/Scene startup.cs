@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SceneStartup : MonoBehaviour
 {
     
     public GameObject character;
-    public GameObject textBox;
+    public GameObject speakText;
 
     [SerializeField] float waitSeconds;
     [SerializeField] string textToSpeak;
@@ -14,6 +15,10 @@ public class SceneStartup : MonoBehaviour
     [SerializeField] int textLength;
     [SerializeField] GameObject mainTextObject;
     [SerializeField] GameObject nextButton;
+    [SerializeField] GameObject BestRizzButton;
+    [SerializeField] GameObject GoodRizzButton;
+    [SerializeField] GameObject BadRizzButton;
+    [SerializeField] GameObject WorstRizzButton;
     [SerializeField] int eventPos = 0; 
 
     void Update()
@@ -30,14 +35,12 @@ public class SceneStartup : MonoBehaviour
     {
         //event0
         yield return new WaitForSeconds(waitSeconds);
-        //fadeScreenIn.SetActive(false);
         character.SetActive(true);
 
         yield return new WaitForSeconds(waitSeconds);
-        // this is where our text function will go
         mainTextObject.SetActive(true);
         textToSpeak = "bla bla bla lalall bal";
-        textBox.GetComponent <TMPro.TMP_Text>().text = textToSpeak;
+        speakText.GetComponent <TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
         TextCreater.runTextPrint = true; 
         yield return new WaitForSeconds(0.05f);
@@ -52,7 +55,7 @@ public class SceneStartup : MonoBehaviour
         //Event1
         nextButton.SetActive(false);
         textToSpeak = "Hello, my name is Velma";
-        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        speakText.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
         TextCreater.runTextPrint = true;
         yield return new WaitForSeconds(0.05f);
@@ -62,11 +65,23 @@ public class SceneStartup : MonoBehaviour
         nextButton.SetActive(true);
         eventPos = 2; 
     }
+
+    IEnumerator EventTwo()
+    {
+        //EventTwo
+        mainTextObject.SetActive(false);
+        nextButton.SetActive(false);
+        yield return new WaitForSeconds(1); 
+    }
     public void NextButton()
     {
         if (eventPos == 1)
         {
             StartCoroutine(EventOne()); 
+        }
+        if(eventPos == 2)
+        {
+            StartCoroutine(EventTwo()); 
         }
     }
 }
