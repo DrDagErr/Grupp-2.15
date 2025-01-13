@@ -11,6 +11,7 @@ public class AffectionMeter : MonoBehaviour
     public Slider slider;
     public Gradient gradient;
     public Image fill;
+    int destination;
 
     void Start()
     {
@@ -44,10 +45,21 @@ public class AffectionMeter : MonoBehaviour
         currentAffection -= 10;
         slider.value = currentAffection;
         fill.color = gradient.Evaluate(slider.normalizedValue);
-
         if (currentAffection < minAffection)
         {
             currentAffection = minAffection;
         }
     }
+   /*
+    public void IncreaseParameter()
+    {
+        destination += 10;
+        while (currentAffection != destination)
+        {
+            currentAffection += 1;
+            slider.value = currentAffection;
+           
+        }
+    }
+   */
 }

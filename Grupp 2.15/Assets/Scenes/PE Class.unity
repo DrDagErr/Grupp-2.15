@@ -464,7 +464,7 @@ MonoBehaviour:
   gradient:
     serializedVersion: 2
     key0: {r: 1, g: 0, b: 0, a: 1}
-    key1: {r: 1, g: 0, b: 0.876667, a: 1}
+    key1: {r: 1, g: 0, b: 1, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -511,7 +511,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 0, b: 0, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1294,8 +1294,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 640395729}
-  textBox: {fileID: 1738074904}
+  textBox: {fileID: 479839955}
   waitSeconds: 2
+  textToSpeak: 
+  currentTextLength: 0
+  textLength: 0
+  mainTextObject: {fileID: 1738074904}
+  nextButton: {fileID: 0}
+  eventPos: 0
 --- !u!4 &1960039315
 Transform:
   m_ObjectHideFlags: 0
