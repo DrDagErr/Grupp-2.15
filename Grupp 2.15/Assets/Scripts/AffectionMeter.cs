@@ -7,18 +7,16 @@ public class AffectionMeter : MonoBehaviour
 {
     public int minAffection = 0;
     public int maxAffection = 100;
-    public int currentAffection;
+    public int Affection;
     public Slider slider;
     public Gradient gradient;
     public Image fill;
-    int destination;
 
     void Start()
     {
-        currentAffection = minAffection;
+        Affection = minAffection;
         fill.color = gradient.Evaluate(1f);
     }
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.D))
@@ -30,36 +28,25 @@ public class AffectionMeter : MonoBehaviour
             IncreaseAffection();
         }
     }
+
     public void IncreaseAffection()
     {
-        currentAffection += 10;
-        slider.value = currentAffection;
+        Affection += 10;
+        slider.value = Affection;
         fill.color = gradient.Evaluate(slider.normalizedValue);
-        if (currentAffection > maxAffection)
+        if (Affection > maxAffection)
         {
-            currentAffection = maxAffection;
+            Affection = maxAffection;
         }
     }
     public void DecreaseAffection()
     {
-        currentAffection -= 10;
-        slider.value = currentAffection;
+        Affection -= 10;
+        slider.value = Affection;
         fill.color = gradient.Evaluate(slider.normalizedValue);
-        if (currentAffection < minAffection)
+        if (Affection < minAffection)
         {
-            currentAffection = minAffection;
+            Affection = minAffection;
         }
     }
-   /*
-    public void IncreaseParameter()
-    {
-        destination += 10;
-        while (currentAffection != destination)
-        {
-            currentAffection += 1;
-            slider.value = currentAffection;
-           
-        }
-    }
-   */
 }

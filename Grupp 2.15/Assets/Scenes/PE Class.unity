@@ -459,7 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minAffection: 0
   maxAffection: 100
-  currentAffection: 0
+  Affection: 0
   slider: {fileID: 583247355}
   gradient:
     serializedVersion: 2
@@ -492,6 +492,8 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   fill: {fileID: 377437649}
+  currentVelocity: 0
+  speed: 200
 --- !u!114 &583247355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1294,13 +1296,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 640395729}
-  textBox: {fileID: 479839955}
+  speakText: {fileID: 479839955}
   waitSeconds: 2
   textToSpeak: 
   currentTextLength: 0
   textLength: 0
   mainTextObject: {fileID: 1738074904}
   nextButton: {fileID: 0}
+  BestRizzButton: {fileID: 0}
+  GoodRizzButton: {fileID: 0}
+  BadRizzButton: {fileID: 0}
+  WorstRizzButton: {fileID: 0}
   eventPos: 0
 --- !u!4 &1960039315
 Transform:
