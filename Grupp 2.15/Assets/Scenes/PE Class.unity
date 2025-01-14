@@ -1076,7 +1076,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 538112720}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 172469448}
+        m_TargetAssemblyTypeName: SceneStartup, Assembly-CSharp
+        m_MethodName: worstRizzButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &538112720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1366,7 +1378,6 @@ MonoBehaviour:
   minAffection: 0
   maxAffection: 100
   Affection: 50
-  increaseAffectionAmount: 25
   slider: {fileID: 830698539}
   gradient:
     serializedVersion: 2
@@ -2033,7 +2044,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1446743274}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 172469448}
+        m_TargetAssemblyTypeName: SceneStartup, Assembly-CSharp
+        m_MethodName: badRizzButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1446743274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2385,7 +2408,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1718907529}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 172469448}
+        m_TargetAssemblyTypeName: SceneStartup, Assembly-CSharp
+        m_MethodName: goodRizzButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1718907529
 MonoBehaviour:
   m_ObjectHideFlags: 0
