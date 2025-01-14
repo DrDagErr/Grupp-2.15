@@ -21,6 +21,7 @@ public class SceneStartup : MonoBehaviour
     [SerializeField] GameObject GoodRizzButton;
     [SerializeField] GameObject BadRizzButton;
     [SerializeField] GameObject WorstRizzButton;
+    [SerializeField] GameObject affecGO;
     [SerializeField] int eventPos = 0;
     public AffectionMeter affectionMeter;
     void Update()
@@ -75,6 +76,7 @@ public class SceneStartup : MonoBehaviour
         mainTextObject.SetActive(false);
         nextButton.SetActive(false);
         yield return new WaitForSeconds(1);
+        affecGO.SetActive(true); 
         RizzButtons.SetActive(true);
     }
     IEnumerator BestRizzEvent()

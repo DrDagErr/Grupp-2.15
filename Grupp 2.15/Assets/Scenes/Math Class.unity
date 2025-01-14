@@ -857,6 +857,7 @@ MonoBehaviour:
   GoodRizzButton: {fileID: 500335800}
   BadRizzButton: {fileID: 335048408}
   WorstRizzButton: {fileID: 1748801752}
+  affecGO: {fileID: 1533942438}
   eventPos: 0
   affectionMeter: {fileID: 1533942439}
 --- !u!4 &567958972
@@ -1950,7 +1951,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1533942439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1966,7 +1967,6 @@ MonoBehaviour:
   minAffection: 0
   maxAffection: 100
   Affection: 50
-  increaseAffectionAmount: 25
   slider: {fileID: 1533942441}
   gradient:
     serializedVersion: 2
@@ -2675,7 +2675,7 @@ RectTransform:
   m_Father: {fileID: 1533942440}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
