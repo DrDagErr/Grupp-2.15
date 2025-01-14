@@ -7,8 +7,7 @@ public class AffectionMeter : MonoBehaviour
 {
     public int minAffection = 0;
     public int maxAffection = 100;
-    public int Affection;
-    public int increaseAffectionAmount;
+    public float Affection;
     public Slider slider;
     public Gradient gradient;
     public Image fill;
@@ -33,9 +32,9 @@ public class AffectionMeter : MonoBehaviour
         */
     }
 
-    public void IncreaseAffection()
+    public void IncreaseAffection(float increaseAffection)
     {
-        Affection += increaseAffectionAmount;
+        Affection += increaseAffection;
         slider.value = Affection;
         fill.color = gradient.Evaluate(slider.normalizedValue);
         if (Affection > maxAffection)
@@ -43,9 +42,9 @@ public class AffectionMeter : MonoBehaviour
             Affection = maxAffection;
         }
     }
-    public void DecreaseAffection()
+    public void DecreaseAffection(float decreaseAffection)
     {
-        Affection -= increaseAffectionAmount;
+        Affection -= decreaseAffection;
         slider.value = Affection;
         fill.color = gradient.Evaluate(slider.normalizedValue);
         if (Affection < minAffection)

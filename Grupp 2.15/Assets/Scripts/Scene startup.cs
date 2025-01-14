@@ -143,19 +143,24 @@ public class SceneStartup : MonoBehaviour
     public void bestRizzButton()
     {
         StartCoroutine(BestRizzEvent());
-        affectionMeter.IncreaseAffection();
+        affectionMeter.IncreaseAffection(25);
     }
     public void goodRizzButton()
     {
         StartCoroutine(GoodRizzEvent());
+        affectionMeter.IncreaseAffection(12.5f);
     }
     public void badRizzButton()
     {
         StartCoroutine(BadRizzEvent());
+        affectionMeter.IncreaseAffection(-12.5f);
+
     }
     public void worstRizzButton()
     {
         StartCoroutine(WorstRizzEvent());
+        affectionMeter.IncreaseAffection(-25);
+
     }
 
 
