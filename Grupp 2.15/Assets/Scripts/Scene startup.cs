@@ -21,8 +21,8 @@ public class SceneStartup : MonoBehaviour
     [SerializeField] GameObject GoodRizzButton;
     [SerializeField] GameObject BadRizzButton;
     [SerializeField] GameObject WorstRizzButton;
-    [SerializeField] int eventPos = 0; 
-
+    [SerializeField] int eventPos = 0;
+    public AffectionMeter affectionMeter;
     void Update()
     {
         textLength = TextCreater.charCount;
@@ -31,6 +31,7 @@ public class SceneStartup : MonoBehaviour
     void Start()
     {
         StartCoroutine(EventStarter());
+        //affectionMeter = GetComponent<AffectionMeter>();
     }
 
     IEnumerator EventStarter()
@@ -103,6 +104,7 @@ public class SceneStartup : MonoBehaviour
     public void bestRizzButton()
     {
         StartCoroutine(BestRizzEvent());
+        affectionMeter.IncreaseAffection();
     }
 
     
