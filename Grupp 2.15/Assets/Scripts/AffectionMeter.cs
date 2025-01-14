@@ -15,8 +15,9 @@ public class AffectionMeter : MonoBehaviour
 
     void Start()
     {
-        Affection = minAffection;
+        slider.value = Affection; 
         fill.color = gradient.Evaluate(1f);
+        
     }
     void Update()
     {

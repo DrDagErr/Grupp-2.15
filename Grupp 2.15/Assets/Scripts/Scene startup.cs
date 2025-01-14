@@ -31,7 +31,7 @@ public class SceneStartup : MonoBehaviour
     void Start()
     {
         StartCoroutine(EventStarter());
-        //affectionMeter = GetComponent<AffectionMeter>();
+  
     }
 
     IEnumerator EventStarter()
@@ -90,6 +90,45 @@ public class SceneStartup : MonoBehaviour
         
         nextButton.SetActive(true);
     }
+    IEnumerator GoodRizzEvent()
+    {
+        RizzButtons.SetActive(false);
+        mainTextObject.SetActive(true);
+        textToSpeak = "ok good Rizz.";
+        speakText.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreater.runTextPrint = true;
+        yield return new WaitUntil(() => textLength == currentTextLength);
+        eventPos = 3;
+
+        nextButton.SetActive(true);
+    }
+    IEnumerator BadRizzEvent()
+    {
+        RizzButtons.SetActive(false);
+        mainTextObject.SetActive(true);
+        textToSpeak = "emm... bad Rizz.";
+        speakText.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreater.runTextPrint = true;
+        yield return new WaitUntil(() => textLength == currentTextLength);
+        eventPos = 3;
+
+        nextButton.SetActive(true);
+    }
+    IEnumerator WorstRizzEvent()
+    {
+        RizzButtons.SetActive(false);
+        mainTextObject.SetActive(true);
+        textToSpeak = "Ew worst Rizz";
+        speakText.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreater.runTextPrint = true;
+        yield return new WaitUntil(() => textLength == currentTextLength);
+        eventPos = 3;
+
+        nextButton.SetActive(true);
+    }
     public void NextButton()
     {
         if (eventPos == 1)
@@ -106,7 +145,19 @@ public class SceneStartup : MonoBehaviour
         StartCoroutine(BestRizzEvent());
         affectionMeter.IncreaseAffection();
     }
+    public void goodRizzButton()
+    {
+        StartCoroutine(GoodRizzEvent());
+    }
+    public void badRizzButton()
+    {
+        StartCoroutine(BadRizzEvent());
+    }
+    public void worstRizzButton()
+    {
+        StartCoroutine(WorstRizzEvent());
+    }
 
-    
+
 }
 

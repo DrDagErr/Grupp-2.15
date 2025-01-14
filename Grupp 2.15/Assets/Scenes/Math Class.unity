@@ -484,7 +484,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 335048411}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 567958971}
+        m_TargetAssemblyTypeName: SceneStartup, Assembly-CSharp
+        m_MethodName: badRizzButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &335048411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -752,7 +764,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 500335803}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 567958971}
+        m_TargetAssemblyTypeName: SceneStartup, Assembly-CSharp
+        m_MethodName: goodRizzButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &500335803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1941,7 +1965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minAffection: 0
   maxAffection: 100
-  Affection: 0
+  Affection: 50
   increaseAffectionAmount: 25
   slider: {fileID: 1533942441}
   gradient:
@@ -1991,9 +2015,9 @@ RectTransform:
   - {fileID: 1979065662}
   m_Father: {fileID: 22350308}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -699.90924, y: 139.98186}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 260.09076, y: 139.98186}
   m_SizeDelta: {x: 100, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1533942441
@@ -2396,7 +2420,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1748801755}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 567958971}
+        m_TargetAssemblyTypeName: SceneStartup, Assembly-CSharp
+        m_MethodName: worstRizzButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1748801755
 MonoBehaviour:
   m_ObjectHideFlags: 0
