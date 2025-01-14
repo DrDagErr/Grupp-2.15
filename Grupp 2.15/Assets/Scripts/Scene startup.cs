@@ -92,6 +92,10 @@ public class SceneStartup : MonoBehaviour
         
         nextButton.SetActive(true);
     }
+    IEnumerator EventThree()
+    {
+
+    }
     IEnumerator GoodRizzEvent()
     {
         RizzButtons.SetActive(false);
@@ -140,6 +144,10 @@ public class SceneStartup : MonoBehaviour
         if(eventPos == 2)
         {
             StartCoroutine(EventTwo()); 
+        }
+        if(eventPos == 3)
+        {
+            StartCoroutine(EventThree()); 
         }
     }
     public void bestRizzButton()
