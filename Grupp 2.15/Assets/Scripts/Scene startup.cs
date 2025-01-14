@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,7 @@ public class SceneStartup : MonoBehaviour
     [SerializeField] int textLength;
     [SerializeField] GameObject mainTextObject;
     [SerializeField] GameObject nextButton;
+    [SerializeField] GameObject RizzButtons;
     [SerializeField] GameObject BestRizzButton;
     [SerializeField] GameObject GoodRizzButton;
     [SerializeField] GameObject BadRizzButton;
@@ -71,7 +73,21 @@ public class SceneStartup : MonoBehaviour
         //EventTwo
         mainTextObject.SetActive(false);
         nextButton.SetActive(false);
-        yield return new WaitForSeconds(1); 
+        yield return new WaitForSeconds(1);
+        RizzButtons.SetActive(true);
+    }
+    IEnumerator BestRizzEvent()
+    {
+        RizzButtons.SetActive(false);
+        mainTextObject.SetActive(true);
+        textToSpeak = "Wow best Rizz.";
+        speakText.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreater.runTextPrint = true;
+        yield return new WaitUntil(() => textLength == currentTextLength);
+        eventPos = 3; 
+        
+        nextButton.SetActive(true);
     }
     public void NextButton()
     {
@@ -84,5 +100,11 @@ public class SceneStartup : MonoBehaviour
             StartCoroutine(EventTwo()); 
         }
     }
+    public void bestRizzButton()
+    {
+        StartCoroutine(BestRizzEvent());
+    }
+
+    
 }
 
