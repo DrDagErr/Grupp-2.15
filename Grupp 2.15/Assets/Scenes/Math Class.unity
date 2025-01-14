@@ -1942,7 +1942,7 @@ MonoBehaviour:
   minAffection: 0
   maxAffection: 100
   Affection: 0
-  increaseAffectionAmount: 0
+  increaseAffectionAmount: 25
   slider: {fileID: 1533942441}
   gradient:
     serializedVersion: 2
