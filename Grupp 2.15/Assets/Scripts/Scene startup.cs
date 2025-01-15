@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
@@ -43,7 +44,7 @@ public class SceneStartup : MonoBehaviour
 
         yield return new WaitForSeconds(waitSeconds);
         mainTextObject.SetActive(true);
-        textToSpeak = "bla bla bla lalall bal";
+        textToSpeak = "Hi. My name is Velma, I haven't seen you in this class before. Are you new here?";
         speakText.GetComponent <TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
         TextCreater.runTextPrint = true; 
@@ -94,7 +95,7 @@ public class SceneStartup : MonoBehaviour
     }
     IEnumerator EventThree()
     {
-
+        yield return new WaitForSeconds(1); 
     }
     IEnumerator GoodRizzEvent()
     {
