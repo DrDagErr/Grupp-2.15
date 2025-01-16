@@ -43,6 +43,13 @@ public class SceneStartupPEClass : MonoBehaviour
         StartCoroutine(Introduction1());
 
     }
+    Vector3 SetRectTransform(float x, float y, float z)
+    {
+        RectTransform rectTransform = (RectTransform)transform;
+        Vector3 position = new Vector3(x, y, z);
+        rectTransform.anchoredPosition = position;
+        return position;
+    }
 
     IEnumerator Introduction1()
     {
@@ -127,10 +134,17 @@ public class SceneStartupPEClass : MonoBehaviour
         badRizzReaction = "Might be safe, but have some fun instead, boring.";
         worstRizzReaction = "Seriously? I can’t believe you just said that. Pathetic.";
 
+        
+        BestRizzButton.transform.position = SetRectTransform(126, 350, 0);
+        GoodRizzButton.transform.position = SetRectTransform(126, -400, 0);
+        WorstRizzButton.transform.position = SetRectTransform(126, 100, 0);
+        BadRizzButton.transform.position = SetRectTransform(126, -150, 0);
+
         nextButton.SetActive(true);
         saveEventPos = eventPos;
         eventPos = 0;
     }
+    
     IEnumerator Question3()
     {
         nextButton.SetActive(false);
@@ -155,6 +169,11 @@ public class SceneStartupPEClass : MonoBehaviour
         nextButton.SetActive(true);
         saveEventPos = eventPos;
         eventPos = 0;
+        BestRizzButton.transform.position = SetRectTransform(126, -150, 0);
+        GoodRizzButton.transform.position = SetRectTransform(126, 350, 0);
+        BadRizzButton.transform.position = SetRectTransform(126, -400, 0);
+        WorstRizzButton.transform.position = SetRectTransform(126, 100, 0);
+
     }
     IEnumerator Question4()
     {
@@ -180,6 +199,10 @@ public class SceneStartupPEClass : MonoBehaviour
         nextButton.SetActive(true);
         saveEventPos = eventPos;
         eventPos = 0;
+        BestRizzButton.transform.position = SetRectTransform(126, 350, 0);
+        GoodRizzButton.transform.position = SetRectTransform(126, -400, 0);
+        BadRizzButton.transform.position = SetRectTransform(126, 100, 0);
+        WorstRizzButton.transform.position = SetRectTransform(126, -150, 0);
     }
     IEnumerator Question5()
     {
@@ -205,6 +228,10 @@ public class SceneStartupPEClass : MonoBehaviour
         nextButton.SetActive(true);
         saveEventPos = eventPos;
         eventPos = 0;
+        BestRizzButton.transform.position = SetRectTransform(126, -150, 0);
+        GoodRizzButton.transform.position = SetRectTransform(126, 100, 0);
+        BadRizzButton.transform.position = SetRectTransform(126, -400, 0);
+        WorstRizzButton.transform.position = SetRectTransform(126, 350, 0);
     }
 
     IEnumerator AnswerButtons()
