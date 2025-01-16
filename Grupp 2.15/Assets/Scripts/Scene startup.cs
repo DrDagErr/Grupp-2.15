@@ -47,6 +47,12 @@ public class SceneStartup : MonoBehaviour
     {
         StartCoroutine(EventStarter());
     }
+    void SetRectTransform(float x, float y, float z, Transform button)
+    {
+        RectTransform rectTransform = (RectTransform)button.transform;
+        Vector3 position = new Vector3(x, y, z);
+        rectTransform.anchoredPosition = position;
+    }
 
     IEnumerator EventStarter()
     {
@@ -87,6 +93,9 @@ public class SceneStartup : MonoBehaviour
         BadRizzReaction = "Why not? its so much fun!";
         WorstRizzText.text = "Heh no, why would i care about that?";
         WorstRizzReaction = "Because it is coming on the exam we have tomorrow, i would start studying.";
+
+
+
         nextButton.SetActive(true);
         SaveEventPos = eventPos;
         eventPos = 2;
@@ -123,6 +132,12 @@ public class SceneStartup : MonoBehaviour
         BadRizzReaction = "Well it's not a competition, let's just try and help each other.";
         WorstRizzText.text = "Fine, I guess you can work with me, but you'll have to do all the work.";
         WorstRizzReaction = "Emm... ok, i'll teach you along the way.";
+
+        SetRectTransform(-26.2f, 432, 0, BestRizzButton.transform);
+        SetRectTransform(-26.2f, 160, 0, BadRizzButton.transform);
+        SetRectTransform(-26.2f, -120, 0, GoodRizzButton.transform); 
+        SetRectTransform(-26.2f, -372, 0, WorstRizzButton.transform);
+
         nextButton.SetActive(true);
         SaveEventPos = eventPos -= 1;
         eventPos = 2;
@@ -152,6 +167,11 @@ public class SceneStartup : MonoBehaviour
         WorstRizzText.text = "I’ll just do my part quickly so I can relax, and you can finish the rest.";
         WorstRizzReaction = "Wait… that’s not very fair. This is supposed to be a team effort!";
 
+        SetRectTransform(-26.2f, -120, 0, BestRizzButton.transform);
+        SetRectTransform(-26.2f, -372, 0, BadRizzButton.transform);  
+        SetRectTransform(-26.2f, 432, 0, GoodRizzButton.transform);
+        SetRectTransform(-26.2f, 160, 0, WorstRizzButton.transform);
+
         nextButton.SetActive(true);
         SaveEventPos = eventPos -= 1;
         eventPos = 2;
@@ -159,23 +179,23 @@ public class SceneStartup : MonoBehaviour
     }
     IEnumerator Question4()
     {
-        // Set up Question 4
+        
         nextButton.SetActive(false);
         affecGO.SetActive(false);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
 
-        // Dialogue setup
+        
         textToSpeak = "We did such a great job on this assignment! You were amazing to work with. I really enjoyed it.";
         speakText.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
         TextCreater.runTextPrint = true;
 
-        // Wait until the text finishes displaying
+        
         yield return new WaitForSeconds(1);
         yield return new WaitUntil(() => textLength == currentTextLength);
         yield return new WaitForSeconds(0.5f);
 
-        // Set up the flirtation options
+        
         BestRizzText.text = "Well, I guess we make a perfect team. Maybe we should pair up more often? Maybe over some coffe?";
         BestRizzReaction = "Are... you asking me on a date?";
 
@@ -188,16 +208,21 @@ public class SceneStartup : MonoBehaviour
         WorstRizzText.text = "I see the way you were looking at me while we worked, you wanna go on a date with me don't you?";
         WorstRizzReaction = "Emmmm.....";
 
-        nextButton.SetActive(true); // Enable the "Next" button for the next interaction
+        SetRectTransform(-26.2f, -372, 0, GoodRizzButton.transform);
+        SetRectTransform(-26.2f, -120, 0, WorstRizzButton.transform);
+        SetRectTransform(-26.2f, 160, 0, BestRizzButton.transform);
+        SetRectTransform(-26.2f, -432, 0, BadRizzButton.transform);
+
+        nextButton.SetActive(true); 
         SaveEventPos = eventPos -= 1;
-        eventPos = 2; // Update event position
+        eventPos = 2; 
     }
 
     IEnumerator Date()
     {
         if (affectionMeter.Affection == 100)
         {
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(2f);
             nextButton.SetActive(false);
             affecGO.SetActive(false);
 
