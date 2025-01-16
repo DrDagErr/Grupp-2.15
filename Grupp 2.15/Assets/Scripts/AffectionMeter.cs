@@ -18,20 +18,6 @@ public class AffectionMeter : MonoBehaviour
         fill.color = gradient.Evaluate(1f);
         
     }
-    void Update()
-    {
-        /*
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            DecreaseAffection();
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            IncreaseAffection();
-        }
-        */
-    }
-
     public void IncreaseAffection(float increaseAffection)
     {
         Affection += increaseAffection;
