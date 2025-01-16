@@ -528,6 +528,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 463367084}
   speakText: {fileID: 455951450}
+  characterOutfits:
+  - {fileID: 21300000, guid: cb7b19e69a0bbe644b1f5e28fbd9a73a, type: 3}
+  - {fileID: 21300000, guid: ae010f9e960edbc418ec3a51a27b35ed, type: 3}
+  - {fileID: 21300000, guid: 21ef8a485e0b692459be595f1b0c653b, type: 3}
+  uiCharacterImage: {fileID: 463367087}
   waitSeconds: 2
   textToSpeak: 
   currentTextLength: 0
@@ -1049,14 +1054,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7065902, g: 0, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: ae010f9e960edbc418ec3a51a27b35ed, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

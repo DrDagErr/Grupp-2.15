@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class SceneStartupPEClass : MonoBehaviour
+public class ArtClass : MonoBehaviour
 {
     public GameObject character;
     public GameObject speakText;
+    public Sprite[] characterOutfits;
+    [SerializeField] public Image uiCharacterImage;
 
     [SerializeField] float waitSeconds;
     [SerializeField] string textToSpeak;
@@ -29,7 +32,7 @@ public class SceneStartupPEClass : MonoBehaviour
     public TextMeshProUGUI goodRizzText;
     public TextMeshProUGUI badRizzText;
     public TextMeshProUGUI worstRizzText;
-    
+
     string bestRizzReaction;
     string goodRizzReaction;
     string badRizzReaction;
@@ -49,7 +52,7 @@ public class SceneStartupPEClass : MonoBehaviour
         RectTransform rectTransform = (RectTransform)button.transform;
         Vector3 position = new Vector3(x, y, z);
         rectTransform.anchoredPosition = position;
-        
+
     }
 
     IEnumerator Introduction1()
@@ -60,7 +63,7 @@ public class SceneStartupPEClass : MonoBehaviour
 
         yield return new WaitForSeconds(waitSeconds);
         mainTextObject.SetActive(true);
-        textToSpeak = "Hi there, i haven't seen you before, my name is Alex";
+        textToSpeak = "Hi there, i haven't seen you here before. I suppose your new to this class, my name is Lily";
         speakText.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
         TextCreater.runTextPrint = true;
@@ -75,7 +78,7 @@ public class SceneStartupPEClass : MonoBehaviour
     {
         //Event1
         nextButton.SetActive(false);
-        textToSpeak = "Oohhh, you are new, nice to meet you!";
+        textToSpeak = "Welcome to this class, nice to meet you!";
         speakText.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
         TextCreater.runTextPrint = true;
@@ -90,7 +93,7 @@ public class SceneStartupPEClass : MonoBehaviour
     {
         // Dialog setup
         nextButton.SetActive(false);
-        textToSpeak = "What do you like to do during your free time?";
+        textToSpeak = "So, what kind of stuff do you do for fun?";
         speakText.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
         TextCreater.runTextPrint = true;
@@ -99,15 +102,15 @@ public class SceneStartupPEClass : MonoBehaviour
         yield return new WaitForSeconds(1);
         yield return new WaitUntil(() => textLength == currentTextLength);
         yield return new WaitForSeconds(0.5f);
-        bestRizzText.text = "I like doing active activities such as going on hikes and such";
-        goodRizzText.text = "I usually like going out with friends and doing stuff to stay active";
-        badRizzText.text = "I like to ocasionally go out on a run but mostly take it easy at home";
-        worstRizzText.text = "I love playing games with my friends";
+        bestRizzText.text = "I love exploring new places or trying something creative.";
+        goodRizzText.text = "I’m into relaxing—like reading, gaming, or just hanging out.";
+        badRizzText.text = "Honestly? Mostly binge-watching shows. It’s kind of my thing.";
+        worstRizzText.text = "Not much. I just sort of go with the flow.";
 
-        bestRizzReaction = "Nice! You’re my kind of person. No time for laziness!";
-        goodRizzReaction = "That’s decent! As long as you don’t slack off.";
-        badRizzReaction = "Ugh, that’s weak. You should do more, its good for you.";
-        worstRizzReaction = "Wow, no wonder you’re so slow. You don't do much fun huh";
+        bestRizzReaction = "That’s awesome. Creativity keeps things exciting, don’t you think?";
+        goodRizzReaction = "Not bad. Everyone needs a little downtime now and then.";
+        badRizzReaction = "Eh, that’s okay, but don’t you ever feel like doing something a little more... meaningful?";
+        worstRizzReaction = "Wow, living the dream, huh? Sounds... thrilling.”";
 
         nextButton.SetActive(true);
         saveEventPos = eventPos;
@@ -115,11 +118,11 @@ public class SceneStartupPEClass : MonoBehaviour
 
     }
 
-   
+
     IEnumerator Question2()
     {
         nextButton.SetActive(false);
-        textToSpeak = "Alright if we were stuck in a zombie apocalypse, what’s your first move?";
+        textToSpeak = "What’s something you’ve always wanted to try but haven’t yet?";
         speakText.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
         TextCreater.runTextPrint = true;
@@ -127,17 +130,17 @@ public class SceneStartupPEClass : MonoBehaviour
         yield return new WaitForSeconds(1);
         yield return new WaitUntil(() => textLength == currentTextLength);
         yield return new WaitForSeconds(0.5f);
-        bestRizzText.text = "Find weapons and fight back, thats for sure.";
-        goodRizzText.text = "Run fast and keep moving so they can't keep up.";
-        badRizzText.text = "Find a good place for shelter and only go out to find necesities such as food and water.";
-        worstRizzText.text = "Lie down and accept my fate. I know i couldn't fight against the zombies.";
+        bestRizzText.text = "Traveling somewhere totally different, like a vibrant city or a peaceful countryside.";
+        goodRizzText.text = "Taking a pottery class or learning a new skill—like cooking or photography.";
+        badRizzText.text = "Something like skydiving, I guess? I mean, it sounds wild.";
+        worstRizzText.text = "I don’t know. Never really thought about it.";
 
-        bestRizzReaction = "Yes! You’d be on the front lines with me. Let’s go!";
-        goodRizzReaction = "Smart move. Just make sure they don't catch you!";
-        badRizzReaction = "Might be safe, but have some fun instead, boring.";
-        worstRizzReaction = "Seriously? I can’t believe you just said that. Pathetic.";
+        bestRizzReaction = "That’s such a cool idea. I bet you’d come back inspired!";
+        goodRizzReaction = "That’s a solid plan. It’s fun to surprise yourself with new abilities.";
+        badRizzReaction = "Huh, risky, but interesting. You might be more adventurous than I thought.";
+        worstRizzReaction = "Nothing? That’s kind of... uninspiring.";
 
-        
+
         SetRectTransform(126, 350, 0, BestRizzButton.transform);
         SetRectTransform(126, -400, 0, GoodRizzButton.transform);
         SetRectTransform(126, 100, 0, WorstRizzButton.transform);
@@ -147,11 +150,11 @@ public class SceneStartupPEClass : MonoBehaviour
         saveEventPos = eventPos;
         eventPos = 0;
     }
-    
+
     IEnumerator Question3()
     {
         nextButton.SetActive(false);
-        textToSpeak = "What’s your idea of a perfect day?";
+        textToSpeak = "What’s your favorite way to express yourself?";
         speakText.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
 
@@ -160,15 +163,15 @@ public class SceneStartupPEClass : MonoBehaviour
         yield return new WaitForSeconds(1);
         yield return new WaitUntil(() => textLength == currentTextLength);
         yield return new WaitForSeconds(0.5f);
-        bestRizzText.text = "Go hiking to the top of a hill and paragliding down from it for sure. Gives me both training and excitment!";
-        goodRizzText.text = "Going out and playing some sports with friends and just having a fun time.";
-        badRizzText.text = "Go out clubbing with friends, for sure.";
-        worstRizzText.text = "Just relaxing at home with a good movie and some sweets.";
+        bestRizzText.text = "Through words—writing or even just having deep conversations.";
+        goodRizzText.text = "Music or movement. I feel like emotions just flow out that way.";
+        badRizzText.text = "I’m not really the expressive type. I just keep things to myself.";
+        worstRizzText.text = "I don’t know. I’m not really into that whole self-expression thing.";
 
-        bestRizzReaction = "That’s what I’m talking about! Active days are the best days!";
-        goodRizzReaction = "Solid! You know how to balance things. Both training and friends.";
-        badRizzReaction = "Might be safe, but have some fun instead, boring.";
-        worstRizzReaction = "Relaxing? Sounds… boring. You’re missing out!";
+        bestRizzReaction = "That’s beautiful. Words can really bring emotions to life.";
+        goodRizzReaction = "That’s so raw and honest. I love that.";
+        badRizzReaction = "That’s a little sad. Don’t you ever want to share what’s inside?";
+        worstRizzReaction = "Wow. That’s... one way to live, I guess.";
 
         SetRectTransform(126, -150, 0, BestRizzButton.transform);
         SetRectTransform(126, 350, 0, GoodRizzButton.transform);
@@ -182,7 +185,7 @@ public class SceneStartupPEClass : MonoBehaviour
     IEnumerator Question4()
     {
         nextButton.SetActive(false);
-        textToSpeak = "Okay, this one’s important—how do you handle failure?";
+        textToSpeak = "If you could create something that would last forever, what would it be?";
         speakText.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
         TextCreater.runTextPrint = true;
@@ -190,15 +193,15 @@ public class SceneStartupPEClass : MonoBehaviour
         yield return new WaitForSeconds(1);
         yield return new WaitUntil(() => textLength == currentTextLength);
         yield return new WaitForSeconds(0.5f);
-        bestRizzText.text = "Learn from it, get better, and try again.";
-        goodRizzText.text = "I get frustrated, but I always try again.";
-        badRizzText.text = "I get upset and take a break before trying again.";
-        worstRizzText.text = "I just give up. No point in trying if it’s too hard.";
+        bestRizzText.text = "A memory, like spending time together somewhere meaningful, maybe painting or sketching outdoors.";
+        goodRizzText.text = "A moment—something like an evening with someone, maybe at a gallery or somewhere inspiring.";
+        badRizzText.text = "Something simple, like a date at a café or watching the stars. I think the company matters more than the place.";
+        worstRizzText.text = "I don’t really know, I’m not good at creating stuff. Maybe just dinner or something?";
 
-        bestRizzReaction = "Exactly! You get knocked down, you get back up. That’s how it’s done!";
-        goodRizzReaction = "Frustration’s fine, but don’t let it stop you. Keep pushing!";
-        badRizzReaction = "Breaks are for quitters. Push through it next time!";
-        worstRizzReaction = "Giving up? Wow. That explains a lot…";
+        bestRizzReaction = "Wait, are you suggesting we go sketching together? That’s... actually a great idea";
+        goodRizzReaction = "Oh, are you saying you want to create that moment with me? That sounds nice.";
+        badRizzReaction = "A café date? Hmm... not exactly groundbreaking, but I guess it would be something.";
+        worstRizzReaction = "Dinner? That’s kind of uninspiring.";
 
         SetRectTransform(126, 350, 0, BestRizzButton.transform);
         SetRectTransform(126, -400, 0, GoodRizzButton.transform);
@@ -208,36 +211,6 @@ public class SceneStartupPEClass : MonoBehaviour
         saveEventPos = eventPos;
         eventPos = 0;
     }
-    IEnumerator Question5()
-    {
-        nextButton.SetActive(false);
-        textToSpeak = "Final one—what’s something you’d never give up on??";
-        speakText.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
-        currentTextLength = textToSpeak.Length;
-        TextCreater.runTextPrint = true;
-        yield return new WaitForSeconds(0.05f);
-        yield return new WaitForSeconds(1);
-        yield return new WaitUntil(() => textLength == currentTextLength);
-        yield return new WaitForSeconds(0.5f);
-        bestRizzText.text = "A challenge. Once I set my sights on something—or someone—I’m all in.";
-        goodRizzText.text = "Pushing myself to go after what I want… like maybe spending more time with you.";
-        badRizzText.text = "Honestly? I’m not great at sticking with things. But, maybe I could try for you?";
-        worstRizzText.text = "It depends. If it’s worth the effort, sure—but not everything is.";
-
-        bestRizzReaction = "Wait—are you asking me on a date? Bold move.";
-        goodRizzReaction = "Are you asking me on a date? Because that’s starting to sound like it!";
-        badRizzReaction = "Hold up. Is this your roundabout way of asking me out? ";
-        worstRizzReaction = "Wow, that’s awkward.";
-
-        SetRectTransform(126, -150, 0, BestRizzButton.transform);
-        SetRectTransform(126, 100, 0, GoodRizzButton.transform);
-        SetRectTransform(126, -400, 0, BadRizzButton.transform);
-        SetRectTransform(126, 350, 0, WorstRizzButton.transform);
-        nextButton.SetActive(true);
-        saveEventPos = eventPos;
-        eventPos = 0;
-    }
-
     IEnumerator AnswerButtons()
     {
         //EventTwo
@@ -249,6 +222,7 @@ public class SceneStartupPEClass : MonoBehaviour
     }
     IEnumerator BestRizzEvent()
     {
+        //uiCharacterImage.sprite = characterOutfits[0];
         RizzButtons.SetActive(false);
         mainTextObject.SetActive(true);
         textToSpeak = bestRizzReaction;
@@ -260,9 +234,9 @@ public class SceneStartupPEClass : MonoBehaviour
 
         nextButton.SetActive(true);
     }
-    
     IEnumerator GoodRizzEvent()
     {
+        //uiCharacterImage.sprite = characterOutfits[1];
         RizzButtons.SetActive(false);
         mainTextObject.SetActive(true);
         textToSpeak = goodRizzReaction;
@@ -274,9 +248,10 @@ public class SceneStartupPEClass : MonoBehaviour
 
         nextButton.SetActive(true);
     }
-    
+
     IEnumerator BadRizzEvent()
     {
+        //uiCharacterImage.sprite = characterOutfits[2];
         RizzButtons.SetActive(false);
         mainTextObject.SetActive(true);
         textToSpeak = badRizzReaction;
@@ -290,6 +265,7 @@ public class SceneStartupPEClass : MonoBehaviour
     }
     IEnumerator WorstRizzEvent()
     {
+        //uiCharacterImage.sprite = characterOutfits[2];
         RizzButtons.SetActive(false);
         mainTextObject.SetActive(true);
         textToSpeak = worstRizzReaction;
@@ -308,8 +284,9 @@ public class SceneStartupPEClass : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
             nextButton.SetActive(false);
             affecGO.SetActive(false);
+            //uiCharacterImage.sprite = characterOutfits[0];
 
-            textToSpeak = "I like that, lets go after school on friday!";
+            textToSpeak = "I like that, lets go this saturday!";
             speakText.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
             currentTextLength = textToSpeak.Length;
             TextCreater.runTextPrint = true;
@@ -326,8 +303,9 @@ public class SceneStartupPEClass : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
             nextButton.SetActive(false);
             affecGO.SetActive(false);
+            //uiCharacterImage.sprite = characterOutfits[1];
 
-            textToSpeak = "That's so sweet of you to ask! I had a great time too, but I think we’re better off as friends. I really value what we have.";
+            textToSpeak = "That's so sweet of you to ask! I had a great time too, but I think we’re better off as friends.";
             speakText.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
             currentTextLength = textToSpeak.Length;
             TextCreater.runTextPrint = true;
@@ -344,6 +322,7 @@ public class SceneStartupPEClass : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
             nextButton.SetActive(false);
             affecGO.SetActive(false);
+            //uiCharacterImage.sprite = characterOutfits[2];
 
             textToSpeak = "Thanks for asking, but I’m not interested. I hope you understand.";
             speakText.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
@@ -387,13 +366,9 @@ public class SceneStartupPEClass : MonoBehaviour
         }
         if (eventPos == 6)
         {
-            StartCoroutine(Question5());
-        }
-        if (eventPos == 7)
-        {
             StartCoroutine(Date());
         }
-        if (eventPos == 8)
+        if (eventPos == 7)
         {
             SceneManager.LoadScene("Menu");
         }
