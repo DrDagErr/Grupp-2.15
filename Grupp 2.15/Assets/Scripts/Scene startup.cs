@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SceneStartup : MonoBehaviour
@@ -158,10 +159,10 @@ public class SceneStartup : MonoBehaviour
     }
     IEnumerator Question4()
     {
-        yield return new WaitForSeconds(1.5f);
         // Set up Question 4
         nextButton.SetActive(false);
         affecGO.SetActive(false);
+        yield return new WaitForSeconds(1.5f);
 
         // Dialogue setup
         textToSpeak = "We did such a great job on this assignment! You were amazing to work with. I really enjoyed it.";
@@ -209,6 +210,8 @@ public class SceneStartup : MonoBehaviour
             yield return new WaitForSeconds(1);
             yield return new WaitUntil(() => textLength == currentTextLength);
             yield return new WaitForSeconds(0.5f);
+            eventPos = 7;
+            nextButton.SetActive(true);
         }
         if (affectionMeter.Affection >= 50 && affectionMeter.Affection <= 99)
         {
@@ -225,6 +228,8 @@ public class SceneStartup : MonoBehaviour
             yield return new WaitForSeconds(1);
             yield return new WaitUntil(() => textLength == currentTextLength);
             yield return new WaitForSeconds(0.5f);
+            eventPos = 7;
+            nextButton.SetActive(true);
         }
         if (affectionMeter.Affection < 50)
         {
@@ -241,6 +246,8 @@ public class SceneStartup : MonoBehaviour
             yield return new WaitForSeconds(1);
             yield return new WaitUntil(() => textLength == currentTextLength);
             yield return new WaitForSeconds(0.5f);
+            eventPos = 7;
+            nextButton.SetActive(true);
         }
         
 
@@ -323,6 +330,10 @@ public class SceneStartup : MonoBehaviour
         if (eventPos == 6)
         {
             StartCoroutine(Date());
+        }
+        if (eventPos == 7)
+        {
+            SceneManager.LoadScene("Menu");
         }
     }
     public void bestRizzButton()
