@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static Unity.Collections.AllocatorManager;
 
 public class ArtClass : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class ArtClass : MonoBehaviour
     public GameObject speakText;
     public Sprite[] characterOutfits;
     [SerializeField] public Image uiCharacterImage;
+    public AudioSource Click;
+
 
     [SerializeField] float waitSeconds;
     [SerializeField] string textToSpeak;
@@ -40,6 +43,10 @@ public class ArtClass : MonoBehaviour
     void Update()
     {
         textLength = TextCreater.charCount;
+        if (Input.GetMouseButtonDown(0))
+        {
+            Click.Play();
+        }
     }
 
     void Start()

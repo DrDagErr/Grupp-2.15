@@ -11,6 +11,7 @@ public class PeClass : MonoBehaviour
     public GameObject speakText;
     public Sprite[] characterOutfits;
     [SerializeField] public Image uiCharacterImage;
+    public AudioSource Click;
 
     [SerializeField] float waitSeconds;
     [SerializeField] string textToSpeak;
@@ -40,6 +41,10 @@ public class PeClass : MonoBehaviour
     void Update()
     {
         textLength = TextCreater.charCount;
+        if (Input.GetMouseButtonDown(0))
+        {
+            Click.Play();
+        }
     }
 
     void Start()
