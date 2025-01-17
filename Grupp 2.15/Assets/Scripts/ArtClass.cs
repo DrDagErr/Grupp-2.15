@@ -302,7 +302,7 @@ public class ArtClass : MonoBehaviour
             yield return new WaitForSeconds(1);
             yield return new WaitUntil(() => textLength == currentTextLength);
             yield return new WaitForSeconds(0.5f);
-            eventPos = 8;
+            eventPos = 7;
             nextButton.SetActive(true);
         }
         if (affectionMeter.Affection >= 50 && affectionMeter.Affection <= 99)
@@ -321,7 +321,7 @@ public class ArtClass : MonoBehaviour
             yield return new WaitForSeconds(1);
             yield return new WaitUntil(() => textLength == currentTextLength);
             yield return new WaitForSeconds(0.5f);
-            eventPos = 8;
+            eventPos = 7;
             nextButton.SetActive(true);
         }
         if (affectionMeter.Affection < 50)
@@ -340,7 +340,7 @@ public class ArtClass : MonoBehaviour
             yield return new WaitForSeconds(1);
             yield return new WaitUntil(() => textLength == currentTextLength);
             yield return new WaitForSeconds(0.5f);
-            eventPos = 8;
+            eventPos = 7;
             nextButton.SetActive(true);
         }
     }
