@@ -229,7 +229,7 @@ public class ArtClass : MonoBehaviour
     }
     IEnumerator BestRizzEvent()
     {
-        //uiCharacterImage.sprite = characterOutfits[0];
+        uiCharacterImage.sprite = characterOutfits[0];
         RizzButtons.SetActive(false);
         mainTextObject.SetActive(true);
         textToSpeak = bestRizzReaction;
@@ -243,7 +243,7 @@ public class ArtClass : MonoBehaviour
     }
     IEnumerator GoodRizzEvent()
     {
-        //uiCharacterImage.sprite = characterOutfits[1];
+        uiCharacterImage.sprite = characterOutfits[0];
         RizzButtons.SetActive(false);
         mainTextObject.SetActive(true);
         textToSpeak = goodRizzReaction;
@@ -258,7 +258,7 @@ public class ArtClass : MonoBehaviour
 
     IEnumerator BadRizzEvent()
     {
-        //uiCharacterImage.sprite = characterOutfits[2];
+        uiCharacterImage.sprite = characterOutfits[1];
         RizzButtons.SetActive(false);
         mainTextObject.SetActive(true);
         textToSpeak = badRizzReaction;
@@ -272,7 +272,7 @@ public class ArtClass : MonoBehaviour
     }
     IEnumerator WorstRizzEvent()
     {
-        //uiCharacterImage.sprite = characterOutfits[2];
+        uiCharacterImage.sprite = characterOutfits[1];
         RizzButtons.SetActive(false);
         mainTextObject.SetActive(true);
         textToSpeak = worstRizzReaction;
@@ -291,7 +291,7 @@ public class ArtClass : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
             nextButton.SetActive(false);
             affecGO.SetActive(false);
-            //uiCharacterImage.sprite = characterOutfits[0];
+            uiCharacterImage.sprite = characterOutfits[0];
 
             textToSpeak = "I like that, lets go this saturday!";
             speakText.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
@@ -310,7 +310,7 @@ public class ArtClass : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
             nextButton.SetActive(false);
             affecGO.SetActive(false);
-            //uiCharacterImage.sprite = characterOutfits[1];
+            uiCharacterImage.sprite = characterOutfits[1];
 
             textToSpeak = "That's so sweet of you to ask! I had a great time too, but I think we’re better off as friends.";
             speakText.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
@@ -329,7 +329,7 @@ public class ArtClass : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
             nextButton.SetActive(false);
             affecGO.SetActive(false);
-            //uiCharacterImage.sprite = characterOutfits[2];
+            uiCharacterImage.sprite = characterOutfits[1];
 
             textToSpeak = "Thanks for asking, but I’m not interested. I hope you understand.";
             speakText.GetComponent<TMPro.TMP_Text>().text = textToSpeak;

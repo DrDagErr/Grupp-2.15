@@ -1144,7 +1144,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: fc75bea491dcaed4a81e0db38537e1d1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2930,7 +2930,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 535465642}
   speakText: {fileID: 849240087}
-  characterOutfits: []
+  characterOutfits:
+  - {fileID: 21300000, guid: 2a9eed7a9f7f28e4db30efc2441c3460, type: 3}
+  - {fileID: 21300000, guid: fc75bea491dcaed4a81e0db38537e1d1, type: 3}
   uiCharacterImage: {fileID: 535465644}
   Click: {fileID: 2060148700}
   waitSeconds: 2
