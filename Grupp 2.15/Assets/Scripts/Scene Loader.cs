@@ -26,4 +26,9 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("PE Class");
     }
+
+    public void LoadNoClass()
+    {
+        SceneManager.LoadScene("No Class");
+    }
 }
