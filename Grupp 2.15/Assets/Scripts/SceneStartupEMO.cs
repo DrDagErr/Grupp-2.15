@@ -307,7 +307,10 @@ public class SceneStartupEMO : MonoBehaviour
         speakText.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
         TextCreater.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
         yield return new WaitUntil(() => textLength == currentTextLength);
+        yield return new WaitForSeconds(0.5f);
         eventPos = SaveEventPos += 1;
 
         nextButton.SetActive(true);
@@ -320,7 +323,10 @@ public class SceneStartupEMO : MonoBehaviour
         speakText.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
         TextCreater.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
         yield return new WaitUntil(() => textLength == currentTextLength);
+        yield return new WaitForSeconds(0.5f);
         eventPos = SaveEventPos += 1;
 
         nextButton.SetActive(true);
@@ -333,7 +339,10 @@ public class SceneStartupEMO : MonoBehaviour
         speakText.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
         TextCreater.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
         yield return new WaitUntil(() => textLength == currentTextLength);
+        yield return new WaitForSeconds(0.5f);
         eventPos = SaveEventPos += 1;
 
         nextButton.SetActive(true);
@@ -346,7 +355,10 @@ public class SceneStartupEMO : MonoBehaviour
         speakText.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
         TextCreater.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
         yield return new WaitUntil(() => textLength == currentTextLength);
+        yield return new WaitForSeconds(0.5f);
         eventPos = SaveEventPos += 1;
 
         nextButton.SetActive(true);
